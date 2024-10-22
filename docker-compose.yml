@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: fazt 
+      POSTGRES_PASSWORD: faztpassword
+      POSTGRES_DB: nestdb
+    ports:
+      - "5432:5432"  # Puerto 5432 expuesto
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword  # Cambia esta contraseña por algo seguro
+      MYSQL_DATABASE: db_cafeteria_app # Cambia por el nombre de tu base de datos MySQL
+    ports:
+      - "3306:3306"  # Puerto 3306 expuesto
